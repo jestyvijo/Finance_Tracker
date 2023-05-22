@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Add Daily Expense</h2>
+  <div *ngFor="let expense of budget.employees">
+    <form class="form-horizontal" #expenseForm1="ngForm" (ngSubmit)="onSubmit(expenseForm1)">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="budget.selectedExpense._id" value={{expense._id}}/>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="expense">Your Balance budget</label><br />
+        <div class="col-sm-10">
+          <input type="text" 
+          class="form-control bg-warning text-danger fw-bold fs-4"
+          id="expense_budget" 
+          placeholder="Enter Expense" 
+          name="expense_budget"
+          #expense_budget="ngModel" 
+          [(ngModel)]="budget.selectedExpense.expense_budget"
+          value={{expense.expense_budget}} readonly/>
+        </div>
+      </div><br />
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="expense">Daily Expense</label><br />
+        <div class="col-sm-10">
+          <input type="number" 
+          class="form-control" 
+          id="daily_expense" 
+          placeholder="Enter Expense" 
+          name="daily_expense"
+          #daily_expense="ngModel" 
+          [(ngModel)]="budget.selectedExpense.daily_expense" required/>
+        </div>
+      </div><br />
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row"  *ngIf="showMsg">
+    <div class="col-xs-12">
+      <p class="alert alert-success">
+          <strong>Expense added</strong>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row" *ngFor="let expense of budget.employees">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body bg-success">
+                <div class="text-white fs-3 fw-bolder"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i>&nbsp;&nbsp;Budget for Expnse : <span>{{expense.expense_budget}}</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body bg-warning">
+                <div class="text-danger fs-3 fw-bolder"><i class="fa fa-circle-o-notch fa-spin" style="font-size:40px"></i>&nbsp;&nbsp;Amount Used : <span>{{expense.daily_expense}}</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+    </div>
+</div>

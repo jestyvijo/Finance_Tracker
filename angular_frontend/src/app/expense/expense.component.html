@@ -1,0 +1,76 @@
+<header>
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/logo.png" height="55" alt="MDB Logo" loading="lazy" />&nbsp;&nbsp;<span
+                    class="text-white fs-3">Finance Tracker</span>
+            </a>
+
+            <!-- Right links -->
+            <ul class="navbar-nav ms-auto d-flex flex-row">
+                <!-- Notification dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger fs-6">Admin</span>
+                    </a>
+                </li>
+                <!-- Avatar -->
+                <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                    id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
+                        height="40" alt="Avatar" loading="lazy" />
+                </a>
+            </ul>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <br />
+    <br />
+    <br />
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group list-group-flush mx-3 mt-4">
+                        <a href="" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                            <i class='fa fa-fort-awesome'></i>&nbsp;<span>Dashboard</span>
+                        </a>
+                        <a href="/addincome" class="list-group-item list-group-item-action py-2 ripple">
+                            <i class='fa fa-bank'></i>&nbsp;<span>Add Budget</span>
+                        </a>
+                        <a href="/addexpense/{{month}}" class="list-group-item list-group-item-action py-2 ripple">
+                            <i class='fa fa-briefcase'></i>&nbsp;<span>Add Expense</span></a>
+                        <a href="" class="list-group-item list-group-item-action py-2 ripple">
+                            <i class='fa fa-line-chart'></i>&nbsp;<span>View Expense</span></a>
+                        <a href="/expenditurelist" class="list-group-item list-group-item-action py-2 ripple">
+                            <i class='fa fa-file-text'></i>&nbsp;<span>Expenditure List</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action py-2 ripple"></a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <br /><br />
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+</main>
+<!--Main layout-->

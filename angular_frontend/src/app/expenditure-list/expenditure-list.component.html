@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <h2>Expenditure List</h2>
+    <form class="form-horizontal" #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm)">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="expenditure">Expenditure</label><br />
+            <div class="col-md-12">
+                <input type="date" 
+                class="form-control" 
+                id="date" 
+                placeholder="Enter Income" 
+                name="date"
+                #date="ngModel" 
+                [(ngModel)]="budget.selectedExpense.date" required/>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-warning">List</button>
+            </div>
+        </div>
+    </form>
+    <div class="col-md-8"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Expenditure List</h2>
+
+            <table class="table bg-danger">
+        
+                <thead>
+        
+                    <tr>
+        
+                        <th>date</th>
+        
+                        <th>Expense</th>
+        
+                    </tr>
+        
+                </thead>
+        
+                <tbody>
+        
+                    <tr class="table-success" *ngFor="let i of budget.employees">
+        
+                        <td>{{i.date}}</td>
+        
+                        <td>{{i.daily_expense}}</td>
+        
+        
+                    </tr>
+        
+                </tbody>
+        
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    
+    
+</div>
