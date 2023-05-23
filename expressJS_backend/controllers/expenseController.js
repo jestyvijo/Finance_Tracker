@@ -10,8 +10,7 @@ route.post('/', (req, res) => {
     var month=new Date().getMonth()
     var month1=parseInt(month)+parseInt(1)
     var year=new Date().getFullYear()
-    date1= year+"-"+month1+"-"+day
-    console.log(date1)
+    date1= year+"-"+0+month1+"-"+day
     var bud = new Budget({
         income: req.body.income,
         expense_budget: req.body.expense_budget,
@@ -63,12 +62,10 @@ var emp = {
     });
 });
 
-route.post('/:date', (req, res) => {
+route.get('/:date', (req, res) => {
     var date1=req.params.date
-    console.log(req.params.date)
-    Budget.find({date:date1},(err, docs) => {
+    Budget.find({date:date1.toString()},(err, docs) => {
         if (!err) { 
-            console.log(req.params.date)
             res.send(docs); }
         else { console.log('Error in Retriving Register :' + JSON.stringify(err, undefined, 2)); }
     });
