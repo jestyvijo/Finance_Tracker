@@ -37,7 +37,6 @@ export class ExpenditureListComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.budget.postdate(form.value).subscribe((res) => {
       this.budget.employees = res as Expensemodel[];
-      alert(this.budget.employees[0].date)
     });
 }
 
