@@ -25,7 +25,6 @@ export class ExpenseserviceService {
     return this.http.put(this.baseURL + `/${emp._id}`, emp);
   }
   postdate(emp:Expensemodel){
-    alert(emp.date)
     return this.http.get(this.baseURL+`/${emp.date}`);
   }
 }
